@@ -3,4 +3,5 @@ using Employee_Wage;
 Console.WriteLine("Employee Wage");
 
 EmpWage.PresentOrNOt();
-EmpWage.EmployeFullTime();
+//EmpWage.EmployeFullTime();
+EmpWage.FulltimeOrPartime();

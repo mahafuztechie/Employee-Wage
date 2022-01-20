@@ -27,29 +27,37 @@ namespace Employee_Wage
                 }
 
             }
-        //method to check employee employee present fulltime 
-        public static void EmployeFullTime()
+        //method to check employee employee present fulltime or partime or absent
+        public static void FulltimeOrPartime()
         {
-            const int FullTime = 1;
+            const int FULL_TIME = 1;
+            const int PART_TIME = 0;
             int empWagePerHr = 20;
             int empHr = 0;
             int totalWage = 0;
             Random random = new Random();
-            int RandomNumber = random.Next(0, 2);
+            int RandomNumber = random.Next(0, 3);
        
 
-            if (RandomNumber == FullTime)
+            if (RandomNumber == FULL_TIME)
             {
-                Console.WriteLine("Emplyee worked for full time");
+                Console.WriteLine("Employee worked for full time");
                 empHr = 8;
+            }
+            // checking if employee is present part-time
+            else if (RandomNumber == PART_TIME)
+            {
+                Console.WriteLine("Employee worked for part time");
+                empHr = 4;
             }
             else
             {
-                Console.WriteLine("Emplyee is absent");
+                Console.WriteLine("Employee is absent");
+                empHr = 0;
             }
 
             totalWage = empWagePerHr * empHr;
-            Console.WriteLine("Total wage of employee for full time is" + totalWage);
+            Console.WriteLine("Total wage of employee for is" + totalWage);
 
         }
 
