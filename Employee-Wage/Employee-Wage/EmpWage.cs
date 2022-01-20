@@ -8,30 +8,31 @@ namespace Employee_Wage
 {
     internal class EmpWage
     {
-     
-        //method to calculate wage using forloop usecase
+
+        //method to calculate wage using Whileloop usecase
         public static void CalculateWage()
         {
-
             const int FULL_TIME = 1;
             const int PART_TIME = 2;
             int totalWage = 0;
             int empHrs = 0;
-            int empWage = 0;
+            int empWage;
             const int EMP_RATE_PER_HR = 20;
             const int MAX_WORKING_DAYS = 20;
-            int day = 1;
+            const int MAX_WORKING_HRS = 100;
+            int days = 1;
+            int empWorkingHrs = 0;
 
 
-
+            
             Random random = new Random();
-            //forLoop to iterate  & calculate totaldays & wage out of max working days
-            for (day = 1; day <= MAX_WORKING_DAYS; day++)
+            //whileloop to iterate days out of max working days & employee working hrs out of max working hrs
+            while (days <= MAX_WORKING_DAYS && empWorkingHrs <= MAX_WORKING_HRS)
             {
 
 
                 int randomInput = random.Next(0, 3);
-                // check if empl0yee presnt fulltime parttime or absent
+                // switch Case to check if employee is present fulltime partime or absent
                 switch (randomInput)
                 {
                     case FULL_TIME:
@@ -48,12 +49,13 @@ namespace Employee_Wage
                         break;
                 }
                 empWage = EMP_RATE_PER_HR * empHrs;
+                Console.WriteLine("employee wage for Day {0} is {1}", days, empWage);
                 totalWage += empWage;
-                Console.WriteLine("EMployee wage for DAy {0} is {1}", day, empWage);
-
+                empWorkingHrs += empHrs;
+                days++;
 
             }
-            Console.WriteLine("total wage is " + totalWage);
+            Console.WriteLine("total wage for {0}Days and hrs:{1} is:{2} ", MAX_WORKING_DAYS, empWorkingHrs, totalWage);
         }
 
     }
