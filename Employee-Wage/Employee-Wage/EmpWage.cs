@@ -8,28 +8,11 @@ namespace Employee_Wage
 {
     internal class EmpWage
     {
-      
-        //method to check if employee present or not
-        public static void PresentOrNOt()
-            {
-                Random random = new Random();
-
-                int RandomNumber = random.Next(0, 2);
-
-
-                if (RandomNumber == 0)
-                {
-                    Console.WriteLine("Emplyee is Present");
-                }
-                else
-                {
-                    Console.WriteLine("Emplyee is absent");
-                }
-
-            }
-        //method to check employee employee present fulltime or partime or absent
-        public static void FulltimeOrPartime()
+     
+        //method to calculate wage using forloop usecase
+        public static void CalculateWage()
         {
+
             const int FULL_TIME = 1;
             const int PART_TIME = 2;
             int totalWage = 0;
@@ -38,32 +21,17 @@ namespace Employee_Wage
             const int EMP_RATE_PER_HR = 20;
             const int MAX_WORKING_DAYS = 20;
             int day = 1;
-            Random random = new Random();
 
-            // using for loop to check employee working days with total Wage
+
+
+            Random random = new Random();
+            //forLoop to iterate  & calculate totaldays & wage out of max working days
             for (day = 1; day <= MAX_WORKING_DAYS; day++)
             {
+
+
                 int randomInput = random.Next(0, 3);
-
-               // with iflse
-                //if (RandomNumber == FULL_TIME)
-                //{
-                //    Console.WriteLine("Employee worked for full time");
-                //    empHr = 8;
-                //}
-                //// checking if employee is present part-time
-                //else if (RandomNumber == PART_TIME)
-                //{
-                //    Console.WriteLine("Employee worked for part time");
-                //    empHr = 4;
-                //}
-                //else
-                //{
-                //    Console.WriteLine("Employee is absent");
-                //    empHr = 0;
-                //}
-
-                // switch case
+                // check if empl0yee presnt fulltime parttime or absent
                 switch (randomInput)
                 {
                     case FULL_TIME:
@@ -79,11 +47,11 @@ namespace Employee_Wage
                         Console.WriteLine("Employee is absent");
                         break;
                 }
-
-
                 empWage = EMP_RATE_PER_HR * empHrs;
                 totalWage += empWage;
-                Console.WriteLine("Employee wage for Day {0} is {1}", day, empWage);
+                Console.WriteLine("EMployee wage for DAy {0} is {1}", day, empWage);
+
+
             }
             Console.WriteLine("total wage is " + totalWage);
         }

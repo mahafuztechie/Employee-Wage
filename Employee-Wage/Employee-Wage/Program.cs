@@ -2,6 +2,7 @@
 using Employee_Wage;
 Console.WriteLine("Employee Wage");
 
-EmpWage.PresentOrNOt();
+//EmpWage.PresentOrNOt();
 //EmpWage.EmployeFullTime();
-EmpWage.FulltimeOrPartime();
+//EmpWage.FulltimeOrPartime();
+EmpWage.CalculateWage();
