@@ -8,31 +8,43 @@ namespace Employee_Wage
 {
     internal class EmpWage
     {
-
-        //method to calculate wage using Whileloop usecase
-        public static void CalculateWage()
-        {
-            const int FULL_TIME = 1;
-            const int PART_TIME = 2;
-            int totalWage = 0;
-            int empHrs = 0;
-            int empWage;
-            const int EMP_RATE_PER_HR = 20;
-            const int MAX_WORKING_DAYS = 20;
-            const int MAX_WORKING_HRS = 100;
-            int days = 1;
-            int empWorkingHrs = 0;
-
-
-            
-            Random random = new Random();
-            //whileloop to iterate days out of max working days & employee working hrs out of max working hrs
-            while (days <= MAX_WORKING_DAYS && empWorkingHrs <= MAX_WORKING_HRS)
+            public const int FULL_TIME = 1;
+            public const int PART_TIME = 2;
+            public static int empHrs = 0;
+            public static void CalculateWage()
             {
 
+                int totalWage = 0;
+                int empWage;
+                const int EMP_RATE_PER_HR = 20;
+                const int MAX_WORKING_DAYS = 20;
+                const int MAX_WORKING_HRS = 100;
+                int days = 1;
+                int empWorkingHrs = 0;
 
-                int randomInput = random.Next(0, 3);
-                // switch Case to check if employee is present fulltime partime or absent
+
+            // while loop to check if days out of max working days &  working hours out of max working hours
+                Random random = new Random();
+                while (days <= MAX_WORKING_DAYS && empWorkingHrs <= MAX_WORKING_HRS)
+                {
+                    int randomInput = random.Next(0, 3);
+                //calling method to fetch working hours
+                    GetWorkingHrs(randomInput);
+                    empWage = EMP_RATE_PER_HR * empHrs;
+                    Console.WriteLine("EMployee wage for Day {0} is {1}", days, empWage);
+                    totalWage += empWage;
+                    empWorkingHrs += empHrs;
+                    days++;
+
+                }
+                Console.WriteLine("total wage for {0}Days and hrs:{1} is:{2} ", MAX_WORKING_DAYS, empWorkingHrs, totalWage);
+            }
+
+        // functional programming to refactor code
+        // this method prints if emplyee is present full time or partime or absent 
+            public static void GetWorkingHrs(int randomInput)
+            {
+
                 switch (randomInput)
                 {
                     case FULL_TIME:
@@ -48,16 +60,8 @@ namespace Employee_Wage
                         Console.WriteLine("Employee is absent");
                         break;
                 }
-                empWage = EMP_RATE_PER_HR * empHrs;
-                Console.WriteLine("employee wage for Day {0} is {1}", days, empWage);
-                totalWage += empWage;
-                empWorkingHrs += empHrs;
-                days++;
-
             }
-            Console.WriteLine("total wage for {0}Days and hrs:{1} is:{2} ", MAX_WORKING_DAYS, empWorkingHrs, totalWage);
-        }
 
-    }
-    }
+        }
+}
 
