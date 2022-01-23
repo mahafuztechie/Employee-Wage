@@ -8,8 +8,6 @@ namespace Employee_Wage
 {
     class EmpWage
     {
-      
-        
         public string company;
         public int empRatePerHr, maxWorkingDays, maxWorkingHrs, totalWage;
        // constructor to initialize variable
