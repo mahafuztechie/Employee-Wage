@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Employee_Wage
 {
-   
     internal class CalculateWage : IComputeEnpWage
     {
         public const int FULL_TIME = 1;
@@ -25,7 +24,6 @@ namespace Employee_Wage
         {
             this.CompanyEmpWge = new List<EmpWage>();
             this.employees = new Dictionary<string, EmpWage>();
-
         }
         public void AddCompany(string company, int empRatePerHr, int maxWorkingDays, int maxWorkingHrs)
         {
