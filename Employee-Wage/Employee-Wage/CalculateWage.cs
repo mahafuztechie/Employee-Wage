@@ -15,21 +15,22 @@ namespace Employee_Wage
         int empWage;
         int days = 1;
         int empWorkingHrs = 0;
-        EmpWage[] CompanyRecord = new EmpWage[5];
-        public int numOfCompany = 0;
+      
+        //declaring list And dictionary
+        public IList<EmpWage> CompanyEmpWge = new List<EmpWage>();
+        public IDictionary<string, EmpWage> employees = new Dictionary<string, EmpWage>();
         public void AddCompany(string company, int empRatePerHr, int maxWorkingDays, int maxWorkingHrs)
         {
             EmpWage emp = new EmpWage(company, empRatePerHr, maxWorkingDays, maxWorkingHrs);
-            this.CompanyRecord[this.numOfCompany] = emp;       //storing details in array with respecting index.
-            numOfCompany++;
+            CompanyEmpWge.Add(emp);       //storing details in list
+            employees.Add(company, emp);
         }
         public void GetWage()
         {
-            //looping to get and set total wage for each index value.
-            for (int i = 0; i < numOfCompany; i++)
+            //iterating to get and set total wage 
+          foreach(EmpWage empWage in this.CompanyEmpWge)
             {
-                int result = CalWage(this.CompanyRecord[i]);  
-                this.CompanyRecord[i].SetTotalWage(result);      
+                empWage.SetTotalWage(CalWage(empWage));
             }
         }
 
