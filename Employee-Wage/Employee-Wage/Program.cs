@@ -7,7 +7,11 @@ Console.WriteLine("Employee Wage");
 //EmpWage.FulltimeOrPartime();
 
 // calculating Wage for multiple companies
-EmpWage emp1 = new EmpWage();
-emp1.CalculateWage("jio", 20, 30, 200);
-emp1.CalculateWage("airtel", 30, 50, 200);
 
+
+CalculateWage company = new CalculateWage();
+company.AddCompany("Dmart", 30, 120, 25);
+company.AddCompany("Reliance", 25, 125, 200);
+company.AddCompany("Amazon", 40, 110, 300);
+company.GetWage();
+Console.ReadLine();
