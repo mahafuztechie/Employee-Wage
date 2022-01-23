@@ -10,8 +10,8 @@ Console.WriteLine("Employee Wage");
 
 
 CalculateWage company = new CalculateWage();
-company.AddCompany("Dmart", 30, 120, 25);
-company.AddCompany("Reliance", 25, 125, 200);
-company.AddCompany("Amazon", 40, 110, 300);
+company.AddCompany("apple", 30, 120, 25);
+company.AddCompany("tata", 25, 125, 200);
+company.AddCompany("Tesla", 40, 110, 300);
 company.GetWage();
 Console.ReadLine();

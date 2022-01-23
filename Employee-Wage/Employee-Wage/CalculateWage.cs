@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Employee_Wage
 {
-    internal class CalculateWage
+   
+    internal class CalculateWage : IComputeEnpWage
     {
         public const int FULL_TIME = 1;
         public const int PART_TIME = 2;
