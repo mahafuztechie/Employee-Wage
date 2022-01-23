@@ -15,16 +15,25 @@ namespace Employee_Wage
         int empWage;
         int days = 1;
         int empWorkingHrs = 0;
-      
+
         //declaring list And dictionary
-        public IList<EmpWage> CompanyEmpWge = new List<EmpWage>();
-        public IDictionary<string, EmpWage> employees = new Dictionary<string, EmpWage>();
+        public IList<EmpWage> CompanyEmpWge;
+        public IDictionary<string, EmpWage> employees;
+        
+        //constructor to initialize list & dictionary
+        public CalculateWage()
+        {
+            this.CompanyEmpWge = new List<EmpWage>();
+            this.employees = new Dictionary<string, EmpWage>();
+
+        }
         public void AddCompany(string company, int empRatePerHr, int maxWorkingDays, int maxWorkingHrs)
         {
             EmpWage emp = new EmpWage(company, empRatePerHr, maxWorkingDays, maxWorkingHrs);
             CompanyEmpWge.Add(emp);       //storing details in list
             employees.Add(company, emp);
         }
+        
         public void GetWage()
         {
             //iterating to get and set total wage 
