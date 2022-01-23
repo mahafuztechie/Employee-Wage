@@ -43,6 +43,8 @@ namespace Employee_Wage
             }
         }
 
+
+
         public int CalWage(EmpWage emp)
         {
             int totalWage = 0;
@@ -67,10 +69,15 @@ namespace Employee_Wage
                 days++;
 
             }
-            Console.WriteLine("\nEmployee of company : {0} , Total wage is : {1} ", emp.company, totalWage);
+            Console.WriteLine("\n company : {0} , Total wage is : {1} ", emp.company, totalWage);
             return totalWage;
         }
 
+        //method to get total company wage
+        public int GetTotalWage(string company)
+        {
+            return this.employees[company].totalWage;
+        }
         //method to calculate  calculate working hours
         public static void GetWorkingHrs(int randomInput)
         {
